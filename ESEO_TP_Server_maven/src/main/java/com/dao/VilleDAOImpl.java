@@ -140,13 +140,13 @@ public class VilleDAOImpl implements VilleDAO {
 		System.out.println("############  PUT - modifierVille(Ville ville)      ##############");	
 	}
 	
-	public void supprimerVille(Ville ville) {
+	public void supprimerVille(String codeCommuneINSEE) {
 		
 		Connection con = JDBCConfiguration.getConnection();		
 		try {
 		
 			   Statement stmt = con.createStatement();
-			   String requeteSuppression = "DELETE FROM ville_france WHERE Code_commune_INSEE=' " + ville.getCodeCommune() + "'";
+			   String requeteSuppression = "DELETE FROM ville_france WHERE Code_commune_INSEE=' " + codeCommuneINSEE + "'";
 			   	
 			   stmt.executeUpdate(requeteSuppression);
 			   con.close();

@@ -3,6 +3,7 @@ package com.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -66,11 +67,11 @@ class VilleController {
 	
 	
 	// Methode DELETE pour supprimer la ressource.
-	@RequestMapping(value = "/ville/delete", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/ville/delete{Code_commune_INSEE}", method = RequestMethod.DELETE)
 	@ResponseBody
-	public void appelDelete(@RequestBody Ville ville) {
+	public void appelDelete(@RequestParam(name = "codeCommuneINSEE" ) String codeCommuneINSEE) {
 		System.out.println("Appel DELETE");
 		
-		villeBLOService.supprimerVille(ville);
+		villeBLOService.supprimerVille(codeCommuneINSEE);
 	}
 }

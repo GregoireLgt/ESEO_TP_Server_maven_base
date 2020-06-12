@@ -14,6 +14,6 @@ public interface VilleBLO {
 	
 	public void modifierVille(Ville ville);
 	
-	public void supprimerVille(Ville ville);
+	public void supprimerVille(String codeCommuneINSEE);
 	
 }
