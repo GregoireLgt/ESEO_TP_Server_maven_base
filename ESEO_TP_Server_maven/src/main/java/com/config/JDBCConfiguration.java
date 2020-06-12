@@ -17,8 +17,8 @@ public class JDBCConfiguration {
 
 		String BDD = "maven";
 		String url = "jdbc:mysql://localhost:3306/" + BDD;
-		String user = "root";
-		String password = "";
+		String user = "admin";
+		String password = "admin";
 		Connection connection = null;
 		// L'essaie de connexion à votre base de donées
 		try {
