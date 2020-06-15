@@ -67,7 +67,7 @@ class VilleController {
 	
 	
 	// Methode DELETE pour supprimer la ressource.
-	@RequestMapping(value = "/ville/delete{Code_commune_INSEE}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/ville/delete", method = RequestMethod.DELETE)
 	@ResponseBody
 	public void appelDelete(@RequestParam(name = "codeCommuneINSEE" ) String codeCommuneINSEE) {
 		System.out.println("Appel DELETE");
