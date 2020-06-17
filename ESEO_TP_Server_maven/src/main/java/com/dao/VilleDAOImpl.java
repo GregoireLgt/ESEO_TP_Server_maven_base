@@ -66,7 +66,7 @@ public class VilleDAOImpl implements VilleDAO {
 		
 		
 		try(Statement stmt = con.createStatement()) {
-			   results = stmt.executeQuery("SELECT * FROM ville_france WHERE Nom_commune = " + monParam); // NOSONAR
+			   results = stmt.executeQuery("SELECT * FROM ville_france WHERE Nom_commune = " + "'"+monParam+"'"); // NOSONAR
 			   
 			   while (results.next()) {
 					Ville ville = new Ville();
