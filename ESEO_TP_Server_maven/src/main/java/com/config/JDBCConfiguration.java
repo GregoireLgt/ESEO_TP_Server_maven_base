@@ -15,8 +15,8 @@ public class JDBCConfiguration {
 
 		String dbDriver = "com.mysql.jdbc.Driver";
 
-		String BDD = "maven";
-		String url = "jdbc:mysql://localhost:3306/" + BDD;
+		String bDD = "maven";
+		String url = "jdbc:mysql://localhost:3306/" + bDD;
 		String user = "admin";
 		String password = "admin";
 		Connection connection = null;
