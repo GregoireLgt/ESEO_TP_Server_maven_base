@@ -31,11 +31,11 @@ class VilleController {
 		return listeVilles;
 	}
 	
-	// Methode GET avec param (filtre = rechercher une ville avec son codePostal par exemple) 
+	// Methode GET avec param (filtre = rechercher une ville avec son nomCommune par exemple) 
 	// On retourne une liste de ville au cas où on aurait 2 villes avec un même nom par exemple si on cherche par nom
 		@RequestMapping(value = "/ville/trouver", method = RequestMethod.GET)
 		@ResponseBody
-		public List<Ville> appelGetParam(@RequestParam(name = "codePostal" ) String monParam) {
+		public List<Ville> appelGetParam(@RequestParam(name = "nomCommune" ) String monParam) {
 			System.out.println("Appel GET avec param");
 
 			List<Ville> listeVillesParam = villeBLOService.getInfoVilleParam(monParam);
