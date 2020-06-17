@@ -3,12 +3,15 @@ package com.config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class JDBCConfiguration {
+	
+	private static Logger logger = Logger.getLogger(JDBCConfiguration.class.getName());
 
 	@Bean
 	public static Connection getConnection() {
@@ -30,9 +33,11 @@ public class JDBCConfiguration {
 		} catch (ClassNotFoundException e) {
 			System.out.println("Erreur pendant la récupération du driver (" + dbDriver + ")" + e);
 			e.printStackTrace();
+			logger.log(java.util.logging.Level.WARNING, "Erreur lors de la récup du driver");
 		} catch (SQLException e1) {
 			System.out.println("Erreur pendant la creation de la connexion à la BDD." + e1);
 			e1.printStackTrace();
+			logger.log(java.util.logging.Level.WARNING, "Erreur lors de la connexion à la BDD");
 		}
 		return connection;
 	}
