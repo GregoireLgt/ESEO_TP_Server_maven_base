@@ -43,7 +43,9 @@ public class VilleDAOImpl implements VilleDAO {
 				listeVilles.add(ville);
 		   }
 		   
+		   results.close();
 		   con.close();
+		  
 
 
 		} catch (SQLException e) {
@@ -82,6 +84,7 @@ public class VilleDAOImpl implements VilleDAO {
 					
 					listeVillesParam.add(ville);
 			   }
+			   results.close();
 			   con.close();
 			   
 
