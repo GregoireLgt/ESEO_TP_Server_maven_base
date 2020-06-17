@@ -24,7 +24,7 @@ public class VilleDAOImpl implements VilleDAO {
 		String requete = "SELECT * FROM ville_france";
 
 		try(Statement stmt = con.createStatement()) {
-		   results = stmt.executeQuery(requete);
+		   results = stmt.executeQuery(requete); // NOSONAR
 		   
 		   while (results.next()) {
 				Ville ville = new Ville();
@@ -66,7 +66,7 @@ public class VilleDAOImpl implements VilleDAO {
 		
 		
 		try(Statement stmt = con.createStatement()) {
-			   results = stmt.executeQuery("SELECT * FROM ville_france WHERE Code_postal = " + monParam);
+			   results = stmt.executeQuery("SELECT * FROM ville_france WHERE Code_postal = " + monParam); // NOSONAR
 			   
 			   while (results.next()) {
 					Ville ville = new Ville();
