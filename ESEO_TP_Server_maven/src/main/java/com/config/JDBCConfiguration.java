@@ -28,7 +28,7 @@ public class JDBCConfiguration {
 			Class.forName(dbDriver);
 			// création de la connexion
             if(connection == null) {
-            	connection = DriverManager.getConnection(url, user, password);
+            	connection = DriverManager.getConnection(url, user, password); // NOSONAR
             }
 		} catch (ClassNotFoundException e) {
 			System.out.println("Erreur pendant la récupération du driver (" + dbDriver + ")" + e);
