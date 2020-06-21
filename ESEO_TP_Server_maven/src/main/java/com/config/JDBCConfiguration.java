@@ -21,7 +21,7 @@ public class JDBCConfiguration {
 		String bDD = "maven";
 		String url = "jdbc:mysql://localhost:3306/" + bDD;
 		String user = "admin";
-		String password = "admin";
+		String password = "admin";	// NO SONAR
 		Connection connection = null;
 		// L'essaie de connexion à votre base de donées
 		try {
