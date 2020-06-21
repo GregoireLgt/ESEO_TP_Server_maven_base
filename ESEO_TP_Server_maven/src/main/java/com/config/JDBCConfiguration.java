@@ -32,11 +32,9 @@ public class JDBCConfiguration {
             }
 		} catch (ClassNotFoundException e) {
 			System.out.println("Erreur pendant la récupération du driver (" + dbDriver + ")" + e);
-			e.printStackTrace();
 			logger.log(java.util.logging.Level.WARNING, "Erreur lors de la récup du driver" + e);
 		} catch (SQLException e1) {
 			System.out.println("Erreur pendant la creation de la connexion à la BDD." + e1);
-			e1.printStackTrace();
 			logger.log(java.util.logging.Level.INFO, "Erreur lors de la connexion à la BDD" + e1);
 		}
 		return connection;
